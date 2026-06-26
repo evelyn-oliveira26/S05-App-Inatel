@@ -111,7 +111,7 @@ header {
 ==================================================== */
 @media (max-width: 600px) {
   body {
-    padding: 10px 10px 40px 10px; /* mais espaço embaixo, pra última caixa não encostar no fim da tela */
+    padding: 10px 10px 18px 10px; /* respiro no final, sem exagerar */
   }
   header {
     padding: 10px 12px;
