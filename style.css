@@ -104,11 +104,7 @@ header {
   pointer-events: none; /* puramente estético, não é clicável */
 }
 
-/* ====================================================
-   RESPONSIVIDADE - celulares estreitos (até 480px)
-   Sem isso, a logo central colide com o botão de menu
-   e o avatar em telas pequenas.
-==================================================== */
+/*Responsividade*/
 @media (max-width: 600px) {
   body {
     padding: 10px 10px 18px 10px; /* respiro no final, sem exagerar */
@@ -357,12 +353,7 @@ header {
   cursor: pointer;
 }
 
-/* ====================================================
-   NOTIFICAÇÕES (toast) - geradas pelo Intercâmbio,
-   mas vivem fora do shadow DOM, então ficam aqui no
-   stylesheet global. Seguem o mesmo padrão visual dos
-   cartões brancos já usados em .comp-aula / .tipo.
-==================================================== */
+/*Notificações*/
 #toast-area {
   position: fixed;
   bottom: 20px;
