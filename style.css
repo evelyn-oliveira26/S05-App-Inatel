@@ -185,7 +185,7 @@ header {
 }
 
 .carrossel-container, .aulas-container, .armarios-container {
-  margin-top: 30px;
+  margin-top: 16px;
   background-color: var(--cor-card-bg);
   padding: 20px;
   border-radius: 8px;
@@ -202,7 +202,7 @@ header {
 ==================================================== */
 .avisos-container {
   display: none; /* só aparece quando existe algum aviso (ver script.js) */
-  margin-top: 20px;
+  margin-top: 16px;
   background-color: var(--cor-card-bg);
   padding: 18px 20px;
   border-radius: 10px;
@@ -269,8 +269,9 @@ header {
 .btn-fechar-intercambio {
   background: none;
   border: none;
-  color: white;
-  font-size: 14px;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
   cursor: pointer;
 }
 
