@@ -77,7 +77,7 @@ const eventos = [
     {
         id: 2,
         title: 'Workshop de IoT',
-        date: '12/01',
+        date: '12/08',
         time: '08:00',
         location: 'Laboratório CS&I',
         type: 'tech',
@@ -87,7 +87,7 @@ const eventos = [
     {
         id: 3,
         title: 'Festa dos Alunos 2025',
-        date: '18/05',
+        date: '18/08',
         time: '19:00',
         location: 'Área Esportiva',
         type: 'cultural',
@@ -254,10 +254,10 @@ customElements.define('aulas-component', AulasComponent);
 // RESERVA ARMÁRIO
 const usuario = {
   nome: "Raphael",
-  matricula: "123456",
-  curso: "Engenharia de Computação",
+  matricula: "123",
+  curso: "Engenharia de Software",
   periodo: 6,
-  cre: 7.8,
+  cre: 78.0,
   pendencia: false,
   pendenciaFinanceira: true, // exemplo de demonstração para a caixa de avisos
   acessibilidade: true
@@ -403,18 +403,18 @@ const editais = [
     id: 1,
     pais: 'Alemanha',
     universidade: 'Jade University',
-    cursosAceitos: ['Engenharia de Computação', 'Engenharia Elétrica'],
-    requisitoCRE: 7.0,
+    cursosAceitos: ['Engenharia Elétrica', 'Engenharia de Software'],
+    requisitoCRE: 70.0,
     prazoInscricao: '30/06/2026',
-    idioma: 'Inglês / Alemão',
-    descricao: 'Intercâmbio acadêmico de um semestre com foco em automação industrial e sistemas embarcados.'
+    idioma: 'Alemão / Inglês',
+    descricao: 'Intercâmbio acadêmico de um semestre com foco em desenvolvimento de firmware embarcado e algoritmos de controle para sistemas elétricos.'
   },
   {
     id: 2,
     pais: 'Portugal',
     universidade: 'Universidade do Minho',
     cursosAceitos: ['Engenharia de Computação', 'Engenharia de Software'],
-    requisitoCRE: 6.0,
+    requisitoCRE: 60.0,
     prazoInscricao: '15/07/2026',
     idioma: 'Português',
     descricao: 'Programa de dupla titulação com disciplinas de sistemas embarcados e engenharia de software.'
@@ -424,7 +424,7 @@ const editais = [
     pais: 'Canadá',
     universidade: 'Université Laval',
     cursosAceitos: ['Engenharia Elétrica', 'Engenharia de Telecomunicações'],
-    requisitoCRE: 8.0,
+    requisitoCRE: 75.0,
     prazoInscricao: '10/08/2026',
     idioma: 'Francês / Inglês',
     descricao: 'Intercâmbio voltado à pesquisa em redes 5G e Internet das Coisas (IoT).'
