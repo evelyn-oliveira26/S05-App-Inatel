@@ -224,8 +224,6 @@ class AulasComponent extends HTMLElement {
         ${aulasDia.map(a => {
           let provaDisplay = a.prova_alert ? '' : 'display: none;';
           
-          // LÓGICA DE ALTERAÇÃO ALTERADA AQUI:
-          // Define a classe da nota dinamicamente com base nas regras do 5º passo
           let classeNota = 'lable-nota-vermelho'; // Padrão se for < 6
           let notaNumerica = Number(a.nota);
 
@@ -276,16 +274,9 @@ const armarios = [
   { id: 8, formato: "duplo", status: false, acessivel: true },  
 ];
 
-// Demonstração: simula que o usuário já chegou no app com um armário
-// reservado e com entrega prevista para hoje (igual ao print enviado).
 armarios[0].status = false;
 let armarioReservadoUsuario = armarios[0];
 
-/* ====================================================================
-   CAIXA DE AVISOS - topo da página inicial
-   Monta a lista dinamicamente a partir do estado real do app
-   (armário reservado, pendência financeira, etc).
-==================================================================== */
 function renderAvisos() {
   const container = document.getElementById('avisosContainer');
   if (!container) return;
@@ -369,24 +360,6 @@ function reservarArmario() {
     `Data de entrega: ${armarioEmprestado.dataEntrega}`;
 }
 
-/* ====================================================================
-   MÓDULO DE INTERCÂMBIO
-   Baseado no diagrama de classes (Aluno, Edital, Inscricao, Documento,
-   StatusInscricao, Notificacao) e na User Story / Análise de Tarefa de Ana:
-   "Como Ana (aluna Eng.), quero consultar editais de intercâmbio, para
-   que eu possa planejar minha viagem e enviar documentos de forma ágil."
-
-   Implementa as recomendações do plano de análise:
-   - Atalho visível no menu lateral (1.1)
-   - Filtro por país/universidade com botões rápidos (1.2)
-   - Selo "Match de Perfil" comparando curso/CRE do aluno x edital (1.2)
-   - Formulário pré-preenchido com dados do aluno (2.1)
-   - Upload de certificado com compressão automática da imagem,
-     simulando o "scanner de documentos" (2.2)
-   - Confirmação com número de protocolo (2.3)
-   - Aba "Minhas Inscrições" com notificações de mudança de status (3.1)
-==================================================================== */
-
 function abrirIntercambio() {
   closeMenu();
   document.getElementById('painelIntercambio').style.display = 'block';
@@ -396,6 +369,22 @@ function abrirIntercambio() {
 function fecharIntercambio() {
   document.getElementById('painelIntercambio').style.display = 'none';
   document.body.style.overflow = '';
+}
+
+function voltarIntercambio() {
+  const comp = document.getElementById('intercambioComp');
+
+  if (comp.editalSelecionado) {
+    comp.voltarParaLista();
+    return;
+  }
+
+  if (comp.aba === 'inscricoes') {
+    comp.trocarAba('editais');
+    return;
+  }
+
+  fecharIntercambio();
 }
 
 // <<enumeration>> StatusInscricao - cada status carrega o rótulo e a
@@ -446,7 +435,7 @@ const editais = [
 const inscricoes = [];
 
 // Notificacao.enviar() - cria um "toast" visual simulando o envio de
-// uma notificação (e-mail/WhatsApp, conforme recomendado na análise)
+// uma notificação 
 function mostrarNotificacao(mensagem) {
   let area = document.getElementById('toast-area');
   if (!area) {
@@ -961,9 +950,6 @@ class IntercambioComponent extends HTMLElement {
       this.processarArquivo(e.target.files[0]);
     });
 
-    // Campos pré-preenchidos, mas editáveis: atualiza o estado interno
-    // a cada digitação SEM re-renderizar (senão o aluno perderia o
-    // foco/cursor no meio da edição).
     const camposEditaveis = {
       campoNome: 'nome',
       campoMatricula: 'matricula',
