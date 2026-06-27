@@ -23,9 +23,9 @@ function temaLim() {
         '--cor-card-bg': 'white',
         '--cor-text-muted': '#666',
         '--cor-input-border': '#ccc',
-        '--cor-header-bg': '#e9f6ea',   // header verde clarinho
-        '--cor-header-fg': '#5cb860',   // ícones num verde mais forte que o fundo
-        '--cor-logo': '#5cb860'         // logo no mesmo verde dos ícones/botões
+        '--cor-header-bg': '#e9f6ea',
+        '--cor-header-fg': '#5cb860',
+        '--cor-logo': '#5cb860'
     });
 }
 
@@ -40,9 +40,9 @@ function temaInatel() {
         '--cor-card-bg': 'white',
         '--cor-text-muted': '#666',
         '--cor-input-border': '#ccc',
-        '--cor-header-bg': '#126ae2',   // header azul: mantém a identidade visual do Inatel
+        '--cor-header-bg': '#126ae2',
         '--cor-header-fg': 'white',
-        '--cor-logo': 'white'           // logo branca por cima do header azul
+        '--cor-logo': 'white'
     });
 }
 
@@ -50,23 +50,23 @@ function temaDark() {
     aplicarTema({
         '--cor-click': '#126ae2',
         '--cor-sombra': '#0a599b',
-        '--cor-text': 'white',          // dark mode completo: os cards também são escuros
-        '--cor-back1': '#1c1c1e',       // menos preto que antes (era #121212)
+        '--cor-text': 'white',
+        '--cor-back1': '#1c1c1e',
         '--cor-back2': '#343437',
         '--md-sys-color-primary': '#126ae2',
-        '--cor-card-bg': '#2a2a2d',     // cards mais claros que o fundo, pra continuarem aparecendo
+        '--cor-card-bg': '#2a2a2d',
         '--cor-text-muted': '#b5b5b8',
         '--cor-input-border': '#5a5a5d',
         '--cor-header-bg': '#242426',
         '--cor-header-fg': '#126ae2',
-        '--cor-logo': '#126ae2'         // logo continua azul, mesmo estilo de sempre
+        '--cor-logo': '#126ae2'
     });
 }
 
 const eventos = [
     {
         id: 1,
-        title: 'Semana do Software 2025',
+        title: 'Semana do Software 2026',
         date: '12/05',
         time: '10:00',
         location: 'Salão de Eventos',
@@ -86,7 +86,7 @@ const eventos = [
     },
     {
         id: 3,
-        title: 'Festa dos Alunos 2025',
+        title: 'Festa dos Alunos 2026',
         date: '18/08',
         time: '19:00',
         location: 'Área Esportiva',
@@ -203,7 +203,6 @@ class AulasComponent extends HTMLElement {
       .lable-prova { background-color: var(--cor-click); padding: 7px 15px; margin-bottom: 10px; border-radius: 500px; text-align: center; }
       .lable-frequencia { background-color: var(--cor-click); padding: 7px 15px; border-radius: 500px; }
       
-      /* Mantidos os seletores do professor, aplicando as cores pedidas */
       .lable-nota-vermelho { background-color: red; padding: 7px 15px; border-radius: 500px; }
       .lable-nota-laranja { background-color: orange; padding: 7px 15px; border-radius: 500px; }
       .lable-nota-verde { background-color: green; padding: 7px 15px; border-radius: 500px; }
@@ -224,7 +223,7 @@ class AulasComponent extends HTMLElement {
         ${aulasDia.map(a => {
           let provaDisplay = a.prova_alert ? '' : 'display: none;';
           
-          let classeNota = 'lable-nota-vermelho'; // Padrão se for < 6
+          let classeNota = 'lable-nota-vermelho';
           let notaNumerica = Number(a.nota);
 
           if (notaNumerica >= 8) {
@@ -256,10 +255,10 @@ const usuario = {
   nome: "Raphael",
   matricula: "123",
   curso: "Engenharia de Software",
-  periodo: 6,
-  cre: 78.0,
+  periodo: 4,
+  cre: 78,
   pendencia: false,
-  pendenciaFinanceira: true, // exemplo de demonstração para a caixa de avisos
+  pendenciaFinanceira: true,
   acessibilidade: true
 };
 
@@ -360,6 +359,7 @@ function reservarArmario() {
     `Data de entrega: ${armarioEmprestado.dataEntrega}`;
 }
 
+/*MÓDULO DE INTERCÂMBIO*/
 function abrirIntercambio() {
   closeMenu();
   document.getElementById('painelIntercambio').style.display = 'block';
@@ -387,8 +387,6 @@ function voltarIntercambio() {
   fecharIntercambio();
 }
 
-// <<enumeration>> StatusInscricao - cada status carrega o rótulo e a
-// variável de cor fixa correspondente (definida em :root no style.css)
 const StatusInscricao = {
   EM_ANALISE:   { label: 'Em Análise',              cor: 'var(--status-analise)' },
   DEFERIDO:     { label: 'Deferido',                cor: 'var(--status-deferido)' },
@@ -397,7 +395,6 @@ const StatusInscricao = {
   CANCELADO:    { label: 'Cancelado',               cor: 'var(--status-cancelado)' }
 };
 
-// Editais (classe Edital do diagrama UML)
 const editais = [
   {
     id: 1,
@@ -407,7 +404,7 @@ const editais = [
     requisitoCRE: 70.0,
     prazoInscricao: '30/06/2026',
     idioma: 'Alemão / Inglês',
-    descricao: 'Intercâmbio acadêmico de um semestre com foco em desenvolvimento de firmware embarcado e algoritmos de controle para sistemas elétricos.'
+    descricao: 'Intercâmbio acadêmico com foco em desenvolvimento de firmware embarcado e algoritmos de controle para sistemas elétricos.'
   },
   {
     id: 2,
@@ -424,18 +421,15 @@ const editais = [
     pais: 'Canadá',
     universidade: 'Université Laval',
     cursosAceitos: ['Engenharia Elétrica', 'Engenharia de Telecomunicações'],
-    requisitoCRE: 75.0,
+    requisitoCRE: 80.0,
     prazoInscricao: '10/08/2026',
     idioma: 'Francês / Inglês',
     descricao: 'Intercâmbio voltado à pesquisa em redes 5G e Internet das Coisas (IoT).'
   }
 ];
 
-// Inscricao[] do aluno (classe Inscricao do diagrama UML) - começa vazio
 const inscricoes = [];
 
-// Notificacao.enviar() - cria um "toast" visual simulando o envio de
-// uma notificação 
 function mostrarNotificacao(mensagem) {
   let area = document.getElementById('toast-area');
   if (!area) {
@@ -455,12 +449,13 @@ class IntercambioComponent extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.aba = 'editais';          // 'editais' | 'inscricoes'
-    this.filtroPais = null;        // null = todos os países
-    this.editalSelecionado = null; // edital aberto para candidatura
-    this.arquivoAnexado = null;    // Documento anexado na candidatura atual
+    this.aba = 'editais';
+    this.filtroPais = null;
+    this.buscaUniversidade = '';
+    this.editalSelecionado = null;
+    this.documentosAnexados = [];
     this.avisoForm = '';
-    this.dadosForm = null;         // valores (editáveis) do formulário de candidatura
+    this.dadosForm = null;
   }
 
   connectedCallback() {
@@ -475,16 +470,18 @@ class IntercambioComponent extends HTMLElement {
     return usuario.cre >= edital.requisitoCRE && edital.cursosAceitos.includes(usuario.curso);
   }
 
-  // Evita que o aluno se inscreva duas vezes no mesmo edital
   jaInscritoNoEdital(editalId) {
     return inscricoes.some(i => i.editalId === editalId);
   }
 
   editaisFiltrados() {
-    return this.filtroPais ? editais.filter(e => e.pais === this.filtroPais) : editais;
+    return editais.filter(e => {
+      const passaPais = !this.filtroPais || e.pais === this.filtroPais;
+      const passaBusca = !this.buscaUniversidade ||
+        e.universidade.toLowerCase().includes(this.buscaUniversidade.toLowerCase());
+      return passaPais && passaBusca;
+    });
   }
-
-  // --- Ações ---
 
   trocarAba(aba) {
     this.aba = aba;
@@ -499,18 +496,14 @@ class IntercambioComponent extends HTMLElement {
 
   abrirCandidatura(id) {
     if (this.jaInscritoNoEdital(id)) {
-      // Trava de segurança: mesmo que o botão certo já não apareça
-      // na lista, isso garante que não dá pra abrir o formulário de novo.
       mostrarNotificacao('Você já enviou uma inscrição para este edital. Acompanhe o status em "Minhas Inscrições".');
       this.trocarAba('inscricoes');
       return;
     }
 
     this.editalSelecionado = editais.find(e => e.id === id);
-    this.arquivoAnexado = null;
+    this.documentosAnexados = [];
     this.avisoForm = '';
-    // Pré-preenche com os dados do aluno, mas como uma cópia editável
-    // (o aluno pode clicar e corrigir qualquer campo antes de enviar).
     this.dadosForm = {
       nome: usuario.nome,
       matricula: usuario.matricula,
@@ -526,11 +519,8 @@ class IntercambioComponent extends HTMLElement {
     this.render();
   }
 
-  // Simula o "scanner de documentos": para imagens, redimensiona e
-  // comprime via canvas antes do envio (reduz risco de arquivos
-  // pesados travarem o sistema, conforme o problema relatado em 2.2).
   comprimirImagem(file) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       const leitor = new FileReader();
       leitor.onload = (evento) => {
         const img = new Image();
@@ -543,40 +533,59 @@ class IntercambioComponent extends HTMLElement {
           canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
           resolve(canvas.toDataURL('image/jpeg', 0.7));
         };
+        img.onerror = () => reject(new Error('imagem ilegível'));
         img.src = evento.target.result;
       };
+      leitor.onerror = () => reject(new Error('falha ao ler o arquivo'));
       leitor.readAsDataURL(file);
     });
   }
 
-  async processarArquivo(file) {
-    if (!file) return;
+  async processarArquivos(fileList) {
+    const arquivos = Array.from(fileList || []);
+    if (arquivos.length === 0) return;
 
-    if (file.type.startsWith('image/')) {
-      const dataUrl = await this.comprimirImagem(file);
-      const tamanhoAproxKB = Math.round((dataUrl.length * 0.75) / 1024);
-      this.arquivoAnexado = {
-        nomeArquivo: file.name,
-        formato: file.type.split('/')[1],
-        tamanhoKB: tamanhoAproxKB,
-        preview: dataUrl
-      };
-    } else {
-      this.arquivoAnexado = {
-        nomeArquivo: file.name,
-        formato: (file.type.split('/')[1]) || 'pdf',
-        tamanhoKB: Math.round(file.size / 1024),
-        preview: null
-      };
+    for (const file of arquivos) {
+      if (file.type.startsWith('image/')) {
+        try {
+          const dataUrl = await this.comprimirImagem(file);
+          const tamanhoAproxKB = Math.round((dataUrl.length * 0.75) / 1024);
+          this.documentosAnexados.push({
+            nomeArquivo: file.name,
+            formato: file.type.split('/')[1],
+            tamanhoKB: tamanhoAproxKB,
+            preview: dataUrl
+          });
+        } catch (erro) {
+          this.documentosAnexados.push({
+            nomeArquivo: file.name,
+            formato: file.type.split('/')[1] || 'imagem',
+            tamanhoKB: Math.round(file.size / 1024),
+            preview: null
+          });
+          mostrarNotificacao(`Não foi possível pré-visualizar "${file.name}", mas o arquivo foi anexado.`);
+        }
+      } else {
+        this.documentosAnexados.push({
+          nomeArquivo: file.name,
+          formato: (file.type.split('/')[1]) || 'pdf',
+          tamanhoKB: Math.round(file.size / 1024),
+          preview: null
+        });
+      }
     }
     this.avisoForm = '';
     this.render();
   }
 
-  // Inscricao.confirmarEnvio()
+  removerDocumento(index) {
+    this.documentosAnexados.splice(index, 1);
+    this.render();
+  }
+
   confirmarEnvio() {
-    if (!this.arquivoAnexado) {
-      this.avisoForm = 'Anexe o certificado de proficiência (PDF ou foto) antes de confirmar.';
+    if (this.documentosAnexados.length === 0) {
+      this.avisoForm = 'Anexe ao menos um documento (certificado de proficiência) antes de confirmar.';
       this.render();
       return;
     }
@@ -587,8 +596,8 @@ class IntercambioComponent extends HTMLElement {
       editalId: this.editalSelecionado.id,
       dataEnvio: new Date().toLocaleString('pt-BR'),
       status: 'EM_ANALISE',
-      documento: this.arquivoAnexado,
-      dadosAluno: { ...this.dadosForm }, // snapshot dos dados (possivelmente editados) no momento do envio
+      documentos: [...this.documentosAnexados],
+      dadosAluno: { ...this.dadosForm },
       protocolo
     };
     inscricoes.push(novaInscricao);
@@ -601,18 +610,19 @@ class IntercambioComponent extends HTMLElement {
     this.simularAtualizacaoStatus(novaInscricao);
   }
 
-  // Simula o NESP avaliando a inscrição e o envio automático de uma
-  // Notificacao quando o status muda (recomendação do item 3.1)
   simularAtualizacaoStatus(inscricao) {
     setTimeout(() => {
-      inscricao.status = Math.random() > 0.5 ? 'DEFERIDO' : 'PENDENTE_DOC';
-      this.render();
       const edital = editais.find(e => e.id === inscricao.editalId);
+      const statusPorEdital = {
+        1: 'DEFERIDO',      // Alemanha
+        2: 'PENDENTE_DOC',  // Portugal
+        3: 'INDEFERIDO'     // Canadá
+      };
+      inscricao.status = statusPorEdital[edital.id] ?? 'EM_ANALISE';
+      this.render();
       mostrarNotificacao(`Atualização da inscrição em ${edital.universidade}: status alterado para "${StatusInscricao[inscricao.status].label}".`);
     }, 8000);
   }
-
-  // --- Renderização ---
 
   render() {
     this.shadowRoot.innerHTML = `
@@ -643,6 +653,21 @@ class IntercambioComponent extends HTMLElement {
         .tab-btn.ativa {
           background-color: var(--md-sys-color-primary);
           color: white;
+        }
+        .input-busca {
+          width: 100%;
+          padding: 9px 12px;
+          margin-bottom: 12px;
+          border-radius: 8px;
+          border: 1px solid var(--cor-input-border);
+          background-color: var(--cor-card-bg);
+          color: var(--cor-text);
+          font-family: "Arimo", sans-serif;
+          font-size: 13px;
+        }
+        .input-busca:focus {
+          outline: none;
+          border-color: var(--cor-click);
         }
         .filtros {
           display: flex;
@@ -762,11 +787,26 @@ class IntercambioComponent extends HTMLElement {
           gap: 10px;
           font-size: 13px;
         }
+        .preview-arquivo span {
+          flex: 1;
+        }
         .preview-arquivo img {
           max-width: 90px;
           max-height: 60px;
           border-radius: 6px;
           object-fit: cover;
+        }
+        .btn-remover-doc {
+          background: none;
+          border: 1px solid var(--cor-input-border);
+          border-radius: 50%;
+          width: 22px;
+          height: 22px;
+          flex-shrink: 0;
+          color: var(--status-indeferido);
+          cursor: pointer;
+          font-size: 11px;
+          line-height: 1;
         }
         .aviso {
           color: var(--status-indeferido);
@@ -822,6 +862,16 @@ class IntercambioComponent extends HTMLElement {
     `;
 
     this.attachListeners();
+
+    if (this._manterFocoBusca) {
+      const inputBusca = this.shadowRoot.getElementById('buscaUniversidade');
+      if (inputBusca) {
+        inputBusca.focus();
+        const pos = inputBusca.value.length;
+        inputBusca.setSelectionRange(pos, pos);
+      }
+      this._manterFocoBusca = false;
+    }
   }
 
   renderAbaEditais() {
@@ -832,10 +882,20 @@ class IntercambioComponent extends HTMLElement {
     const paises = this.paisesDisponiveis();
 
     return `
+      <input
+        type="text"
+        id="buscaUniversidade"
+        class="input-busca"
+        placeholder="Buscar por universidade (ex: Jade University)"
+        value="${this.buscaUniversidade}"
+      >
+
       <div class="filtros">
         <button class="filtro-btn ${!this.filtroPais ? 'ativo' : ''}" data-pais="">Todos</button>
         ${paises.map(p => `<button class="filtro-btn ${this.filtroPais === p ? 'ativo' : ''}" data-pais="${p}">${p}</button>`).join('')}
       </div>
+
+      ${this.editaisFiltrados().length === 0 ? '<p class="vazio">Nenhum edital encontrado para esse filtro/busca.</p>' : ''}
 
       ${this.editaisFiltrados().map(edital => {
         const inscrito = this.jaInscritoNoEdital(edital.id);
@@ -862,7 +922,6 @@ class IntercambioComponent extends HTMLElement {
 
   renderFormularioCandidatura() {
     const edital = this.editalSelecionado;
-    const arq = this.arquivoAnexado;
     const dados = this.dadosForm;
 
     return `
@@ -883,15 +942,17 @@ class IntercambioComponent extends HTMLElement {
         <input type="text" id="campoPeriodo" value="${dados.periodo}">
         <div class="dica-campo">Esses dados já vêm preenchidos a partir do seu cadastro, mas você pode clicar e editar antes de enviar.</div>
 
-        <label>Certificado de Proficiência (PDF, PNG ou JPEG)</label>
-        <input type="file" class="input-arquivo" id="inputArquivo" accept=".pdf,.png,.jpg,.jpeg">
+        <label>Documentos (Certificado de Proficiência e outros, se necessário)</label>
+        <input type="file" class="input-arquivo" id="inputArquivo" accept=".pdf,.png,.jpg,.jpeg" multiple>
+        <div class="dica-campo">Pode selecionar mais de um arquivo de uma vez, ou anexar um por vez — todos ficam na lista abaixo.</div>
 
-        ${arq ? `
+        ${this.documentosAnexados.map((doc, i) => `
           <div class="preview-arquivo">
-            ${arq.preview ? `<img src="${arq.preview}" alt="preview">` : '📄'}
-            <span>${arq.nomeArquivo} (~${arq.tamanhoKB}KB, otimizado para envio)</span>
+            ${doc.preview ? `<img src="${doc.preview}" alt="preview">` : '📄'}
+            <span>${doc.nomeArquivo} (~${doc.tamanhoKB}KB, otimizado para envio)</span>
+            <button type="button" class="btn-remover-doc" data-index="${i}" aria-label="Remover">✕</button>
           </div>
-        ` : ''}
+        `).join('')}
 
         ${this.avisoForm ? `<div class="aviso">${this.avisoForm}</div>` : ''}
 
@@ -911,12 +972,15 @@ class IntercambioComponent extends HTMLElement {
     return inscricoes.slice().reverse().map(inscricao => {
       const edital = editais.find(e => e.id === inscricao.editalId);
       const status = StatusInscricao[inscricao.status];
+      const listaDocs = inscricao.documentos
+        .map(d => `${d.nomeArquivo} (${d.formato.toUpperCase()}, ~${d.tamanhoKB}KB)`)
+        .join('<br>');
       return `
         <div class="card-inscricao">
           <div class="titulo-edital">${edital.universidade} - ${edital.pais}</div>
           <span class="status-badge" style="background-color:${status.cor}">${status.label}</span>
           <p class="info-edital">
-            Documento enviado: <b>${inscricao.documento.nomeArquivo}</b> (${inscricao.documento.formato.toUpperCase()}, ~${inscricao.documento.tamanhoKB}KB)<br>
+            Documento(s) enviado(s):<br><b>${listaDocs}</b><br>
             Data de envio: <b>${inscricao.dataEnvio}</b>
           </p>
           <div class="protocolo">Protocolo: ${inscricao.protocolo}</div>
@@ -935,6 +999,12 @@ class IntercambioComponent extends HTMLElement {
       btn.addEventListener('click', () => this.selecionarPais(btn.dataset.pais || null));
     });
 
+    root.getElementById('buscaUniversidade')?.addEventListener('input', (e) => {
+      this.buscaUniversidade = e.target.value;
+      this._manterFocoBusca = true;
+      this.render();
+    });
+
     root.querySelectorAll('.btn-candidatar').forEach(btn => {
       btn.addEventListener('click', () => this.abrirCandidatura(Number(btn.dataset.id)));
     });
@@ -947,7 +1017,12 @@ class IntercambioComponent extends HTMLElement {
     root.getElementById('btnConfirmar')?.addEventListener('click', () => this.confirmarEnvio());
 
     root.getElementById('inputArquivo')?.addEventListener('change', (e) => {
-      this.processarArquivo(e.target.files[0]);
+      this.processarArquivos(e.target.files);
+      e.target.value = '';
+    });
+
+    root.querySelectorAll('.btn-remover-doc').forEach(btn => {
+      btn.addEventListener('click', () => this.removerDocumento(Number(btn.dataset.index)));
     });
 
     const camposEditaveis = {
